@@ -4,7 +4,7 @@ import LetterDensity from "./components/LetterDensity";
 import StatisticsCards from "./components/StatisticsCard";
 import TextArea from "./components/Textarea";
 import TextAreaSettings from "./components/TextareaSettings";
-import LogoNavbar from "./images/app-logo-navbar.svg";
+import LogoApp from "./images/app-logo-navbar.svg";
 import DarkTheme from "./images/dark-theme.svg";
 import LightTheme from "./images/light-theme.svg";
 
@@ -27,7 +27,7 @@ const App = () => {
     <>
       <div className="navbar-section">
         <div className="navbar-logo">
-          <img src={LogoNavbar} />
+          <img src={LogoApp} />
           <p>Character Counter</p>
         </div>
         <button
