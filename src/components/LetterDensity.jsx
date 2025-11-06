@@ -54,6 +54,7 @@ const LetterDensity = ({ text }) => {
 };
 
 export default LetterDensity;
+// export default LetterDensity;
 
 const getLetterReport = (text) => {
   const formattedText = text.toLowerCase().replaceAll(" ", "");
