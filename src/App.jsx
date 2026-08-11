@@ -24,7 +24,7 @@ const App = () => {
   }, [darkTheme]);
 
   return (
-    <>
+    <div className="page-wrapper">
       <div className="navbar-section">
         <div className="navbar-logo">
           <img src={LogoApp} />
@@ -58,7 +58,7 @@ const App = () => {
       <StatisticsCards text={text} excludeSpaces={excludeSpaces} />
 
       <LetterDensity text={text} />
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 const Textarea = ({ text, setText, characterLimit, hasCharacterLimit }) => {
   const handleTextChange = (e) => {
-    setText(e.target.value.trim());
+    setText(e.target.value);
   };
   return (
     <>
@@ -9,6 +9,7 @@ const Textarea = ({ text, setText, characterLimit, hasCharacterLimit }) => {
         cols="100"
         placeholder="Start type here ... (or paste your text)"
         onChange={handleTextChange}
+        value={text}
         className="textarea-card"
       ></textarea>
       {hasCharacterLimit === true && text.length > characterLimit ? (

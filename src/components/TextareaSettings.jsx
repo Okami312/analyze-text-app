@@ -21,13 +21,12 @@ const TextareaSettings = ({
   };
 
   const getReadingTime = () => {
-    if (text.length === 0) {
-      return "0";
-    } else if (text.length <= "300") {
-      return "<1";
-    } else {
-      return "<4";
-    }
+    const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+    if (wordCount === 0) return "0 minutes";
+    const minutes = wordCount / 200;
+    if (minutes < 1) return "<1 minute";
+    const roundedMinutes = Math.ceil(minutes);
+    return `${roundedMinutes} minute${roundedMinutes === 1 ? "" : "s"}`;
   };
 
   return (
@@ -61,7 +60,7 @@ const TextareaSettings = ({
             ) : null}
           </div>
         </div>
-        <p>Approx. reading time: {getReadingTime()} minutes</p>
+        <p>Approx. reading time: {getReadingTime()}</p>
       </div>
     </>
   );
