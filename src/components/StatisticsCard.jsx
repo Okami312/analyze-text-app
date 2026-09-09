@@ -3,7 +3,7 @@ const StatisticsCard = ({ text, excludeSpaces }) => {
     .replaceAll(".", " ")
     .replaceAll("!", " ")
     .replaceAll("?", " ")
-    .split(" ")
+    .split(/\s+/)
     .filter((word) => word !== "").length;
 
   const sentenceCount = text

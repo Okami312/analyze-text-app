@@ -16,7 +16,8 @@ const TextareaSettings = ({
   };
 
   const handleCharacterLimitChange = (e) => {
-    const newCharacterLimit = Number(e.target.value);
+    const newCharacterLimit =
+      e.target.value === "" ? undefined : Number(e.target.value);
     setCharacterLimit(newCharacterLimit);
   };
 
@@ -38,7 +39,7 @@ const TextareaSettings = ({
               type="checkbox"
               id="exclude-spaces"
               onChange={handleExcludeSpaces}
-              value={excludeSpaces}
+              checked={excludeSpaces}
             />
             <label htmlFor="exclude-spaces">Exclude Spaces</label>
           </div>
@@ -48,6 +49,7 @@ const TextareaSettings = ({
               type="checkbox"
               id="character-limit"
               onChange={handleHasCharacterLimit}
+              checked={hasCharacterLimit}
             />
             <label htmlFor="character-limit">Set character limits.</label>
             {hasCharacterLimit === true ? (
